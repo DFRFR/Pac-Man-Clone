@@ -8,10 +8,23 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
 [application]
 
 config/name="Pac-Man-Clone"
+run/main_scene="res://levels/Sample Level 1.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=224
+window/size/height=248
+window/size/test_width=448
+window/size/test_height=577
 
 [physics]
 
