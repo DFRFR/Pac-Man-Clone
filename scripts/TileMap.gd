@@ -5,6 +5,7 @@ onready var half_cell_size = get_cell_size()/2
 func _ready():
 	pass
 
+
 func is_tile_vacant(pos, direction):
 	var current_tile = world_to_map((pos))
 	var next_tile = get_cellv(current_tile + direction)
@@ -28,6 +29,8 @@ func eat(pos):
 	var tile = get_cellv(current_tile)
 	if(tile == 5 or tile == 6):
 		set_cellv(current_tile, 10)
+		
+
 
 func _process(delta):
 	var count = 0

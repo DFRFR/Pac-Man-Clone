@@ -1,7 +1,7 @@
 extends Area2D
 
 var direction = Vector2(0,0)
-var SPEED = 0.1
+export var SPEED = 0.1
 onready var walls = get_parent().get_node("TileMap")
 
 func _ready():
@@ -25,6 +25,8 @@ func _process(delta):
 	var pos_to_move = walls.is_tile_vacant(position, direction)
 	if(direction != Vector2(0,0)):
 		position = position.linear_interpolate(pos_to_move, SPEED + delta)
+		$PacmanWakka.play()
 		walls.eat(position)
+		
 	
 	#position = walls.is_tile_vacant(position, direction)
