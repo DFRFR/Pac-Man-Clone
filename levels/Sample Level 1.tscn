@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/environments/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/ref_pacman.png" type="Texture" id=2]
 [ext_resource path="res://assets/game assets/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=4]
 [ext_resource path="res://scripts/TileMap.gd" type="Script" id=5]
+[ext_resource path="res://assets/game assets/RedGhost.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/RedGhost.gd" type="Script" id=7]
 
 [node name="Sample Level 1" type="Node2D"]
 
@@ -26,3 +28,8 @@ centered = false
 position = Vector2( 224, 328 )
 scale = Vector2( 0.097, 0.099 )
 script = ExtResource( 4 )
+SPEED = 0.05
+
+[node name="RedGhost" parent="." instance=ExtResource( 6 )]
+position = Vector2( 197.166, 277.123 )
+script = ExtResource( 7 )
