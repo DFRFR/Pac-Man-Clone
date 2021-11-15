@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pacman wakka.wav-7759752fd7a1fff6be16ebd34de2555f.sample"
+
+[deps]
+
+source_file="res://assets/game assets/audio/pacman wakka.wav"
+dest_files=[ "res://.import/pacman wakka.wav-7759752fd7a1fff6be16ebd34de2555f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
