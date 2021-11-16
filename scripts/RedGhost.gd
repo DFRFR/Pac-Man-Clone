@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	var pos_to_move = walls.is_tile_vacant(position, direction)
 	position = position.linear_interpolate(pos_to_move, SPEED + delta)
-	print()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

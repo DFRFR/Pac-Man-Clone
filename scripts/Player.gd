@@ -25,7 +25,7 @@ func _process(delta):
 	var pos_to_move = walls.is_tile_vacant(position, direction)
 	if(direction != Vector2(0,0)):
 		position = position.linear_interpolate(pos_to_move, SPEED + delta)
-		$PacmanWakka.play()
+		
 		walls.eat(position)
 		
 	
