@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/environments/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/ref_pacman.png" type="Texture" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://scripts/Player.gd" type="Script" id=4]
 [ext_resource path="res://scripts/TileMap.gd" type="Script" id=5]
 [ext_resource path="res://assets/game assets/RedGhost.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/RedGhost.gd" type="Script" id=7]
+[ext_resource path="res://assets/game assets/OrangeGhost.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/game assets/PinkGhost.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/game assets/BlueGhost.tscn" type="PackedScene" id=9]
 
 [node name="Sample Level 1" type="Node2D"]
 
@@ -31,5 +33,13 @@ script = ExtResource( 4 )
 SPEED = 0.05
 
 [node name="RedGhost" parent="." instance=ExtResource( 6 )]
-position = Vector2( 197.166, 277.123 )
-script = ExtResource( 7 )
+position = Vector2( 185.919, 275.315 )
+
+[node name="BlueGhost" parent="." instance=ExtResource( 9 )]
+position = Vector2( 205.464, 275.884 )
+
+[node name="OrangeGhost" parent="." instance=ExtResource( 7 )]
+position = Vector2( 229.633, 275.884 )
+
+[node name="PinkGhost" parent="." instance=ExtResource( 8 )]
+position = Vector2( 251.945, 275.412 )
