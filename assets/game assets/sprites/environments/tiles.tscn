@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/Pellets/RedPellet.png" type="Texture" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/blue_blocks/blue_block.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/game assets/sprites/Pellets/GreyPellet.png" type="Texture" id=4]
 [ext_resource path="res://assets/game assets/sprites/Pellets/pellet.png" type="Texture" id=5]
 [ext_resource path="res://assets/game assets/sprites/Pellets/power_pellet.png" type="Texture" id=6]
+[ext_resource path="res://assets/game assets/sprites/environments/grey_block/black_block.png" type="Texture" id=7]
 
 [node name="Tiles" type="Node2D"]
 
@@ -31,9 +32,14 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
 
 [node name="pellet" type="Sprite" parent="."]
-position = Vector2( 40, 8 )
+position = Vector2( 26.6957, 20.8583 )
 texture = ExtResource( 5 )
 
 [node name="power_pellet" type="Sprite" parent="."]
-position = Vector2( 56, 8 )
+position = Vector2( 51.3918, 20.9326 )
 texture = ExtResource( 6 )
+
+[node name="black_block" type="Sprite" parent="."]
+position = Vector2( 25.1122, 40.2575 )
+scale = Vector2( 0.927942, 1.05197 )
+texture = ExtResource( 7 )

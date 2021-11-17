@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=8 format=2]
+[gd_resource type="TileSet" load_steps=9 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/Pellets/RedPellet.png" type="Texture" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/blue_blocks/blue_block.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/game assets/sprites/scifi_tileset.png" type="Texture" id=5]
 [ext_resource path="res://assets/game assets/sprites/Pellets/pellet.png" type="Texture" id=6]
 [ext_resource path="res://assets/game assets/sprites/Pellets/power_pellet.png" type="Texture" id=7]
+[ext_resource path="res://assets/game assets/sprites/environments/grey_block/black_block.png" type="Texture" id=8]
 
 [resource]
 0/name = "blue_block"
@@ -17,13 +18,11 @@
 0/tile_mode = 0
 0/occluder_offset = Vector2( 7.5, 7.5 )
 0/navigation_offset = Vector2( 7.5, 7.5 )
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
 0/z_index = 0
 1/name = "RedPellet"
 1/texture = ExtResource( 1 )
@@ -33,6 +32,10 @@
 1/tile_mode = 0
 1/occluder_offset = Vector2( 9, 10 )
 1/navigation_offset = Vector2( 9, 10 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
 2/name = "PowerPellet"
@@ -43,6 +46,10 @@
 2/tile_mode = 0
 2/occluder_offset = Vector2( 21, 22 )
 2/navigation_offset = Vector2( 21, 22 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
 3/name = "GreyPellet"
@@ -53,6 +60,10 @@
 3/tile_mode = 0
 3/occluder_offset = Vector2( 9, 9 )
 3/navigation_offset = Vector2( 9, 9 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
 4/name = "scifi_tileset.png 4"
@@ -63,6 +74,10 @@
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
 5/name = "pellet"
@@ -73,6 +88,10 @@
 5/tile_mode = 0
 5/occluder_offset = Vector2( 8, 8 )
 5/navigation_offset = Vector2( 8, 8 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
 6/name = "power_pellet"
@@ -83,6 +102,10 @@
 6/tile_mode = 0
 6/occluder_offset = Vector2( 8, 8 )
 6/navigation_offset = Vector2( 8, 8 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
 8/name = "scifi_tileset.png 8"
@@ -93,6 +116,10 @@
 8/tile_mode = 0
 8/occluder_offset = Vector2( 0, 0 )
 8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
 9/name = "scifi_tileset.png 9"
@@ -103,6 +130,10 @@
 9/tile_mode = 0
 9/occluder_offset = Vector2( 0, 0 )
 9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
 9/shapes = [  ]
 9/z_index = 0
 10/name = "scifi_tileset.png 10"
@@ -113,5 +144,23 @@
 10/tile_mode = 0
 10/occluder_offset = Vector2( 0, 0 )
 10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
 10/shapes = [  ]
 10/z_index = 0
+11/name = "black_block"
+11/texture = ExtResource( 8 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 17, 15 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 8.5, 7.5 )
+11/navigation_offset = Vector2( 8.5, 7.5 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
