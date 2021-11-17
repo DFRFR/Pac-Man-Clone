@@ -46,6 +46,7 @@ func _process(delta):
 				count += 1
 	if(count == 0):
 		print("won")
+		get_tree().change_scene("res://assets/game assets/misc/WinScreen.tscn")
 		set_process(false)
 	else:
 		print(count)
