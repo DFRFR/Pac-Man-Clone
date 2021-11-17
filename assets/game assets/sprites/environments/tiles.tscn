@@ -35,11 +35,17 @@ texture = ExtResource( 4 )
 position = Vector2( 26.6957, 20.8583 )
 texture = ExtResource( 5 )
 
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="pellet"]
+
 [node name="power_pellet" type="Sprite" parent="."]
 position = Vector2( 51.3918, 20.9326 )
 texture = ExtResource( 6 )
 
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="power_pellet"]
+
 [node name="black_block" type="Sprite" parent="."]
-position = Vector2( 25.1122, 40.2575 )
+position = Vector2( 26.7826, 40.0348 )
 scale = Vector2( 0.927942, 1.05197 )
 texture = ExtResource( 7 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="black_block"]
