@@ -1,7 +1,11 @@
 extends TileMap
 
 onready var half_cell_size = get_cell_size()/2
-
+const tile_type = {
+	black=11
+	,pellet = 5
+	,power_pellet = 6}
+	
 func _ready():
 	pass
 
@@ -9,8 +13,10 @@ func _ready():
 func is_tile_vacant(pos, direction):
 	var current_tile = world_to_map((pos))
 	var next_tile = get_cellv(current_tile + direction)
+	print(next_tile)
+
 	var next_tile_pos = Vector2()
-	if(next_tile == 5 or next_tile == 6 or next_tile == 10):
+	if(next_tile == 11 or next_tile == tile_type.pellet or next_tile == tile_type.power_pellet or next_tile == tile_type.black):
 		next_tile_pos = map_to_world(current_tile + direction) + half_cell_size
 	elif(next_tile == 8):
 		next_tile_pos = map_to_world(Vector2(220, 17))
@@ -27,10 +33,9 @@ func relocate(pos):
 func eat(pos):
 	var current_tile = world_to_map(pos)
 	var tile = get_cellv(current_tile)
-	if(tile == 5 or tile == 6):
-		set_cellv(current_tile, 10)
+	if(tile == tile_type.pellet or tile == tile_type.power_pellet):
+		set_cellv(current_tile, tile_type.black)
 		
-
 
 func _process(delta):
 	var count = 0
