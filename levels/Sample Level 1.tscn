@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/environments/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/ref_pacman.png" type="Texture" id=2]
@@ -9,8 +9,10 @@
 [ext_resource path="res://assets/game assets/OrangeGhost.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/game assets/PinkGhost.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/game assets/BlueGhost.tscn" type="PackedScene" id=9]
+[ext_resource path="res://levels/Sample Level 1.gd" type="Script" id=10]
 
 [node name="Sample Level 1" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
@@ -38,10 +40,16 @@ SPEED = 0.05
 position = Vector2( 208, 280 )
 
 [node name="BlueGhost" parent="." instance=ExtResource( 9 )]
-position = Vector2( 192, 280 )
+position = Vector2( 296.67, 231.173 )
 
 [node name="OrangeGhost" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 224, 232 )
 
 [node name="PinkGhost" parent="." instance=ExtResource( 8 )]
 position = Vector2( 224, 280 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
