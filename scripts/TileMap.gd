@@ -1,6 +1,9 @@
 extends TileMap
 
 onready var half_cell_size = get_cell_size()/2
+onready var player = get_parent().get_parent().get_node("Player")
+onready var enemy = get_parent().get_parent().get_node("OrangeGhost")
+
 const tile_type = {
 	black=11
 	,pellet = 5
@@ -13,7 +16,7 @@ func _ready():
 func is_tile_vacant(pos, direction):
 	var current_tile = world_to_map((pos))
 	var next_tile = get_cellv(current_tile + direction)
-	print(next_tile)
+	#print(next_tile)
 
 	var next_tile_pos = Vector2()
 	if(next_tile == 11 or next_tile == tile_type.pellet or next_tile == tile_type.power_pellet or next_tile == tile_type.black):
@@ -48,5 +51,14 @@ func _process(delta):
 		print("won")
 		get_tree().change_scene("res://assets/game assets/misc/WinScreen.tscn")
 		set_process(false)
-	else:
-		print(count)
+	#else:
+		#print(count)
+		
+func get_enemy_pos():
+	var pos = map_to_world(Vector2(14,14))
+	pos.y += half_cell_size.y
+	return pos
+	
+func get_path_to_player():
+	var path = get_parent().get_simple_path(enemy.position, player.position, false)
+	return path

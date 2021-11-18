@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=2]
+[gd_resource type="TileSet" load_steps=12 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/Pellets/RedPellet.png" type="Texture" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/blue_blocks/blue_block.png" type="Texture" id=2]
@@ -9,12 +9,27 @@
 [ext_resource path="res://assets/game assets/sprites/Pellets/power_pellet.png" type="Texture" id=7]
 [ext_resource path="res://assets/game assets/sprites/environments/grey_block/black_block.png" type="Texture" id=8]
 
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 16, 0, 16, 16, 0, 16, 0, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -8.62123, -7.60478, -8.62123, 7.60478, 8.62123, 7.60478, 8.62123, -7.60478 ) ]
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( 16, 0, 16, 16, 0, 16, 0, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 8, 8, 8, 8, -8 ) ]
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16, 0, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 8, 8, 8, 8, -8, -8, -8 ) ]
+
 [resource]
 0/name = "blue_block"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 15, 15 )
+0/region = Rect2( 0, 0, 16, 16 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 7.5, 7.5 )
 0/navigation_offset = Vector2( 7.5, 7.5 )
@@ -68,6 +83,7 @@
 5/tile_mode = 0
 5/occluder_offset = Vector2( 8, 8 )
 5/navigation_offset = Vector2( 8, 8 )
+5/navigation = SubResource( 2 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "power_pellet"
@@ -78,6 +94,7 @@
 6/tile_mode = 0
 6/occluder_offset = Vector2( 8, 8 )
 6/navigation_offset = Vector2( 8, 8 )
+6/navigation = SubResource( 3 )
 6/shapes = [  ]
 6/z_index = 0
 8/name = "scifi_tileset.png 8"
@@ -114,9 +131,10 @@
 11/texture = ExtResource( 8 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 0, 0, 17, 15 )
+11/region = Rect2( 0, 0, 16, 16 )
 11/tile_mode = 0
 11/occluder_offset = Vector2( 8.5, 7.5 )
 11/navigation_offset = Vector2( 8.5, 7.5 )
+11/navigation = SubResource( 1 )
 11/shapes = [  ]
 11/z_index = 0
