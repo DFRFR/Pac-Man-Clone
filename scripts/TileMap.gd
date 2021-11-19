@@ -13,7 +13,7 @@ func _ready():
 func is_tile_vacant(pos, direction):
 	var current_tile = world_to_map((pos))
 	var next_tile = get_cellv(current_tile + direction)
-	print(next_tile)
+
 
 	var next_tile_pos = Vector2()
 	if(next_tile == 11 or next_tile == tile_type.pellet or next_tile == tile_type.power_pellet or next_tile == tile_type.black):
