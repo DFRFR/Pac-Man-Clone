@@ -1,32 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/Ghosts/BlueGhost-facing-front.png" type="Texture" id=1]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 4.51108
-height = 4.82284
+[sub_resource type="CircleShape2D" id=1]
+radius = 0.732696
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "New Anim",
-"speed": 5.0
-} ]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
-[node name="Area2D" type="Area2D"]
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.112647, -0.0165486 )
+scale = Vector2( 0.067631, 0.0676311 )
+texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.24118, 1.40157 )
+position = Vector2( -3.8147e-06, 0.0834284 )
 shape = SubResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.486911, 0.561038 )
-scale = Vector2( 0.0736987, 0.0736987 )
-frames = SubResource( 2 )
-animation = "New Anim"
