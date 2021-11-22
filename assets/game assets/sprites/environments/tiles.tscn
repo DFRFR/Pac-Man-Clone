@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/game assets/sprites/environments/grey_block/black_block.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.39784, 7.84487 )
+extents = Vector2( 1.76889, 1.4958 )
 
 [node name="Tiles" type="Node2D"]
 
