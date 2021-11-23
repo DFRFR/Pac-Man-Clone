@@ -2,6 +2,8 @@ extends TileMap
 
 onready var half_cell_size = get_cell_size()/2
 const tile_type = {
+	power_nav_pellet =14,
+	nav_pellet =13,
 	black=11
 	,pellet = 5
 	,power_pellet = 6}
@@ -16,7 +18,13 @@ func is_tile_vacant(pos, direction):
 
 
 	var next_tile_pos = Vector2()
-	if(next_tile == 11 or next_tile == tile_type.pellet or next_tile == tile_type.power_pellet or next_tile == tile_type.black):
+	print(next_tile)
+	if(next_tile == tile_type.black 
+	or next_tile == tile_type.pellet 
+	or next_tile == tile_type.power_pellet
+	or next_tile == tile_type.power_nav_pellet
+	or next_tile == tile_type.nav_pellet 
+	or next_tile == tile_type.black):
 		next_tile_pos = map_to_world(current_tile + direction) + half_cell_size
 	elif(next_tile == 8):
 		next_tile_pos = map_to_world(Vector2(220, 17))
@@ -33,7 +41,8 @@ func relocate(pos):
 func eat(pos):
 	var current_tile = world_to_map(pos)
 	var tile = get_cellv(current_tile)
-	if(tile == tile_type.pellet or tile == tile_type.power_pellet):
+	if(tile == tile_type.pellet or tile == tile_type.power_pellet
+	or tile==tile_type.nav_pellet or tile == tile_type.power_nav_pellet):
 		set_cellv(current_tile, tile_type.black)
 		
 
@@ -48,5 +57,5 @@ func _process(delta):
 		print("won")
 		get_tree().change_scene("res://assets/game assets/misc/WinScreen.tscn")
 		set_process(false)
-	else:
-		print(count)
+	#else:
+		#print(count)
