@@ -2,7 +2,7 @@ extends Area2D
 
 var direction = Vector2(0,0)
 export var SPEED = 0.1
-onready var walls = get_parent().get_node("Navigation2D/TileMap")
+onready var walls = get_parent().get_node("TileMap")
 
 func _ready():
 	$AnimatedSprite.play("movement")
