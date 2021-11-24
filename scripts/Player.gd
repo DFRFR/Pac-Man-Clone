@@ -1,32 +1,42 @@
-extends Area2D
+extends KinematicBody2D
 
-var direction = Vector2(0,0)
-export var SPEED = 0.1
-onready var walls = get_parent().get_node("TileMap")
 
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+export var speed = 100
+
+var velocity = Vector2(0,0)
+onready var tilemap =  get_parent().get_node("TileMap")
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play("movement")
 	
+	 # Replace with function body.
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if Input.is_action_pressed("ui_up"):
-		direction = Vector2(0, -1)
+		velocity = Vector2(0,-speed)
 		rotation = deg2rad(-90)
+		
 	elif Input.is_action_pressed("ui_down"):
-		direction = Vector2(0, 1)
+		velocity = Vector2(0,speed)
 		rotation = deg2rad(90)
+		
 	elif Input.is_action_pressed("ui_left"):
-		direction = Vector2(-1, 0)
+		velocity = Vector2(-speed,0)
 		rotation = deg2rad(180)
+		
 	elif Input.is_action_pressed("ui_right"):
-		direction = Vector2(1, 0)
+		velocity = Vector2(speed,0)
 		rotation = deg2rad(0)
 		
-	var pos_to_move = walls.is_tile_vacant(position, direction)
-	if(direction != Vector2(0,0)):
-		position = position.linear_interpolate(pos_to_move, SPEED + delta)
-		
-		walls.eat(position)
-		
+
+	move_and_collide(velocity*delta)
 	
-	#position = walls.is_tile_vacant(position, direction)
+	
+#	pass

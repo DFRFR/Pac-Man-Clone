@@ -6,7 +6,7 @@ extends KinematicBody2D
 # var b = "text"
 export var speed = 10
 onready var tilemap = get_parent().get_node("TileMap")
-var direction = Vector2(0,speed)
+var velocity = Vector2(0,speed)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -19,9 +19,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
-	var collide = move_and_collide(direction*delta*speed)
+	var collide = move_and_collide(velocity*delta)
+	#var tile = tilemap.get_cellv(tilemap.world_to_map())
+	#print(tile)
 	if collide:
-		print(collide.position)
-		var tile = tilemap.get_cellv(tilemap.world_to_map(collide.position))
-		print("Enemy collided with:"+str(tile))
-#	pass
+		print("Enemy collided with:"+str(collide.collider_id))
+

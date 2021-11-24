@@ -19,7 +19,7 @@ func is_tile_vacant(pos, direction):
 
 
 	var next_tile_pos = Vector2()
-	print(next_tile)
+
 	if(next_tile == tile_type.black 
 	or next_tile == tile_type.nav_tile
 	or next_tile == tile_type.pellet 
@@ -55,6 +55,7 @@ func _process(delta):
 			var tile = get_cell(i,j)
 			if(tile == 5):
 				count += 1
+				
 	if(count == 0):
 		print("won")
 		get_tree().change_scene("res://assets/game assets/misc/WinScreen.tscn")
