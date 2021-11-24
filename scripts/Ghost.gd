@@ -23,5 +23,6 @@ func _process(delta):
 	#var tile = tilemap.get_cellv(tilemap.world_to_map())
 	#print(tile)
 	if collide:
-		print("Enemy collided with:"+str(collide.collider_id))
+		pass
+		#print("Enemy collided with:"+str(collide.collider_id))
 

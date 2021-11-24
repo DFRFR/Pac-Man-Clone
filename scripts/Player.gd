@@ -6,9 +6,9 @@ extends KinematicBody2D
 # var b = "text"
 
 export var speed = 100
-
 var velocity = Vector2(0,0)
 onready var tilemap =  get_parent().get_node("TileMap")
+onready var player = get_parent().get_node("Player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play("movement")
@@ -34,9 +34,17 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		velocity = Vector2(speed,0)
 		rotation = deg2rad(0)
-		
-
+	
+	if player.position.x >445:
+		player.position.x = 10
+		player.position.y = 277
+	if player.position.x<5:
+		player.position.x = 441
+		player.position.y = 277
+	
 	move_and_collide(velocity*delta)
+	print(player.position)
+	tilemap.eat(player.position)
 	
 	
 #	pass
