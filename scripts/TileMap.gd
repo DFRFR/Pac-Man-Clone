@@ -5,7 +5,7 @@ onready var player = get_parent().get_node("Player")
 
 
 const tile_type = {
-	power_nav_pellet =14,
+	power_nav_pellet = 14,
 	nav_pellet =13,
 	nav_tile = 12,
 	black=11
@@ -20,8 +20,7 @@ func eat(pos):
 	var tile = get_cellv(current_tile)
 	if(tile == tile_type.pellet or tile == tile_type.power_pellet):
 		set_cellv(current_tile, tile_type.black)
-	elif(tile==tile_type.nav_pellet or tile == tile_type.power_nav_pellet):
-		set_cellv(current_tile,tile_type.nav_tile)	
+
 
 func _process(delta):
 	var count = 0

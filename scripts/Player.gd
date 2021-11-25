@@ -35,6 +35,7 @@ func _process(delta):
 		velocity = Vector2(speed,0)
 		rotation = deg2rad(0)
 	
+	## warp 
 	if player.position.x >445:
 		player.position.x = 10
 		player.position.y = 277
