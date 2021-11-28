@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/environments/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/ref_pacman.png" type="Texture" id=2]
 [ext_resource path="res://assets/game assets/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/game assets/OrangeGhost.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/TileMap.gd" type="Script" id=5]
-[ext_resource path="res://scripts/Ghost.gd" type="Script" id=6]
+[ext_resource path="res://scripts/BlueGhost.gd" type="Script" id=6]
 [ext_resource path="res://scripts/OrangeGhost.gd" type="Script" id=7]
 [ext_resource path="res://music/pac_chomp1.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/game assets/BlueGhost.tscn" type="PackedScene" id=9]
@@ -13,6 +13,10 @@
 [ext_resource path="res://music/pacman_intermission.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/game assets/misc/Extrude.tres" type="DynamicFont" id=12]
 [ext_resource path="res://scripts/Score.gd" type="Script" id=13]
+[ext_resource path="res://assets/game assets/PinkGhost.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/game assets/RedGhost.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scripts/RedGhost.gd" type="Script" id=16]
+[ext_resource path="res://scripts/PinkGhost.gd" type="Script" id=17]
 
 [node name="Sample Level 1" type="Node2D"]
 
@@ -56,6 +60,16 @@ script = ExtResource( 6 )
 position = Vector2( 264, 296 )
 collision_mask = 0
 script = ExtResource( 7 )
+
+[node name="RedGhost" parent="LevelNavigation" instance=ExtResource( 15 )]
+position = Vector2( 207.655, 293.806 )
+collision_mask = 0
+script = ExtResource( 16 )
+
+[node name="PinkGhost" parent="LevelNavigation" instance=ExtResource( 14 )]
+position = Vector2( 237.32, 294.531 )
+collision_mask = 0
+script = ExtResource( 17 )
 
 [node name="radar" type="AudioStreamPlayer" parent="LevelNavigation"]
 stream = ExtResource( 10 )
