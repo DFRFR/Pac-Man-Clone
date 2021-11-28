@@ -44,5 +44,6 @@ margin_right = 1024.0
 margin_bottom = 200.0
 custom_fonts/font = ExtResource( 1 )
 text = "MAIN MENU"
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
