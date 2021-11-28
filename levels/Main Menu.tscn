@@ -65,16 +65,16 @@ margin_bottom = 48.0
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_right = 21.0
 margin_bottom = 48.0
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = ">"
 
 [node name="Start" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_left = 25.0
 margin_right = 163.0
 margin_bottom = 48.0
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Start"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -89,16 +89,16 @@ margin_bottom = 48.0
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_right = 21.0
 margin_bottom = 48.0
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = ">"
 
 [node name="Options" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_left = 25.0
 margin_right = 217.0
 margin_bottom = 48.0
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Options"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -114,16 +114,16 @@ margin_bottom = 48.0
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 margin_right = 21.0
 margin_bottom = 48.0
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = ">"
 
 [node name="Exit" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 margin_left = 25.0
 margin_right = 124.0
 margin_bottom = 48.0
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Exit"
 
 [node name="musicScreen" type="AudioStreamPlayer" parent="."]
