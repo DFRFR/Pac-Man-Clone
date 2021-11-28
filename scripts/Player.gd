@@ -10,6 +10,7 @@ var velocity = Vector2(0,0)
 var hv = Vector2(0,0)
 onready var tilemap =  get_parent().get_node("TileMap")
 onready var player = get_parent().get_node("Player")
+onready var blueGhost = get_parent().get_node("BlueGhost")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play("movement")
@@ -44,8 +45,16 @@ func _process(delta):
 		player.position.x = 441
 		player.position.y = 277
 	
-	move_and_collide(velocity*delta)
-	
+	var collision = move_and_collide(velocity*delta)
+	if collision:
+		var collided_obj = collision.collider.name
+		print(collided_obj)
+		if("Ghost" in collided_obj):
+			print("I collided with a ghost")
+			get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
+			set_process(false)
+			
+			
 	tilemap.eat(player.position)
 	
 	

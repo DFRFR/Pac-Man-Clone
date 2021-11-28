@@ -2,7 +2,7 @@ extends TileMap
 
 
 onready var player = get_parent().get_node("Player")
-
+onready var blue_ghost = get_parent().get_node("BlueGhost")
 const tile_type = {
 	power_nav_pellet = 14,
 	nav_pellet = 13,
