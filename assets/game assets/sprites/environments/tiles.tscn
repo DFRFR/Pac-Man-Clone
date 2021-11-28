@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/game assets/sprites/Pellets/RedPellet.png" type="Texture" id=1]
+[ext_resource path="res://assets/game assets/sprites/environments/blue_blocks/blue_block.png" type="Texture" id=2]
+[ext_resource path="res://assets/game assets/sprites/Pellets/PowerPellet.png" type="Texture" id=3]
+[ext_resource path="res://assets/game assets/sprites/Pellets/GreyPellet.png" type="Texture" id=4]
+[ext_resource path="res://assets/game assets/sprites/Pellets/pellet.png" type="Texture" id=5]
+[ext_resource path="res://assets/game assets/sprites/Pellets/power_pellet.png" type="Texture" id=6]
+[ext_resource path="res://assets/game assets/sprites/environments/grey_block/black_block.png" type="Texture" id=7]
+[ext_resource path="res://assets/game assets/sprites/Pellets/black.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.65374, 7.3666 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1.76889, 1.4958 )
+
+[node name="Tiles" type="Node2D"]
+
+[node name="blue_block" type="Sprite" parent="."]
+position = Vector2( 4, 4 )
+scale = Vector2( 0.533333, 0.533333 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="blue_block"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blue_block/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="RedPellet" type="Sprite" parent="."]
+position = Vector2( 12, 4 )
+scale = Vector2( 0.444444, 0.4 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 19, 20 )
+
+[node name="PowerPellet" type="Sprite" parent="."]
+position = Vector2( 20, 4 )
+scale = Vector2( 0.190476, 0.181818 )
+texture = ExtResource( 3 )
+
+[node name="GreyPellet" type="Sprite" parent="."]
+position = Vector2( 28, 4 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="pellet" type="Sprite" parent="."]
+position = Vector2( 32, 24 )
+texture = ExtResource( 5 )
+
+[node name="power_pellet" type="Sprite" parent="."]
+position = Vector2( 56, 24 )
+texture = ExtResource( 6 )
+
+[node name="black_block" type="Sprite" parent="."]
+position = Vector2( 32, 48 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 8 )
+
+[node name="navi_pellet" type="Sprite" parent="."]
+position = Vector2( 27.8984, 66.4165 )
+texture = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="navi_pellet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navi_pellet/Area2D"]
+shape = SubResource( 2 )
+
+[node name="navi_power_pellet" type="Sprite" parent="."]
+position = Vector2( 51.8127, 66.252 )
+texture = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="navi_power_pellet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navi_power_pellet/Area2D"]
+shape = SubResource( 2 )
+
+[node name="navi_tile" type="Sprite" parent="."]
+position = Vector2( 52.6805, 44.0973 )
+scale = Vector2( 0.916623, 1.021 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="navi_tile"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navi_tile/Area2D"]
+shape = SubResource( 2 )
