@@ -11,7 +11,7 @@ var hv = Vector2(0,0)
 onready var tilemap =  get_parent().get_node("TileMap")
 onready var player = get_parent().get_node("Player")
 onready var blueGhost = get_parent().get_node("BlueGhost")
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$AnimatedSprite.play("movement")
 	 # Replace with function body.
