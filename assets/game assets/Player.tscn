@@ -26,4 +26,3 @@ shape = SubResource( 1 )
 position = Vector2( -3.57628e-07, -8.9407e-08 )
 scale = Vector2( 0.103896, 0.0909091 )
 frames = SubResource( 2 )
-animation = "death"

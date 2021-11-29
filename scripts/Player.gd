@@ -54,8 +54,11 @@ func _process(delta):
 			get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
 			set_process(false)
 			
-			
-	tilemap.eat(player.position)
+	
+	var tile_eaten = tilemap.eat(player.position)		
+	
+	if (tile_eaten == 6):
+		print()
 	
 	
 #	pass

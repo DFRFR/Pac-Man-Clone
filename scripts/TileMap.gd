@@ -20,9 +20,12 @@ func _ready():
 func eat(pos):
 	var current_tile = world_to_map(pos)
 	var tile = get_cellv(current_tile)
+	if(tile==tile_type.power_pellet):
+		print("I ate a power pellet")
 	if(tile == tile_type.pellet or tile == tile_type.power_pellet):
-		set_cellv(current_tile, tile_type.black2)
+		set_cellv(current_tile, tile_type.black)
 		$chomp.play()
+	return tile
 
 func _process(delta):
 	var count = 0
@@ -35,7 +38,7 @@ func _process(delta):
 			if(tile == tile_type.pellet or tile==tile_type.nav_pellet
 			or tile== tile_type.nav_pellet or tile==tile_type.power_nav_pellet):
 				count += 1	
-	print("Pellets eaten:"+str(242-count))
+	#print("Pellets eaten:"+str(242-count))
 	
 	if(count == 0):
 		#print("won")
