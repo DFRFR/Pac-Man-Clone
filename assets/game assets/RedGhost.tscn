@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/game assets/sprites/Ghosts/DeadGhost2-facing-front.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 8.00044
+radius = 8.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -30,7 +30,6 @@ width = 5.0
 default_color = Color( 1, 0, 0, 1 )
 
 [node name="RedAnimSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.105551, 0.0296295 )
 scale = Vector2( 0.0911361, 0.0911361 )
 frames = SubResource( 2 )
 animation = "power-up"

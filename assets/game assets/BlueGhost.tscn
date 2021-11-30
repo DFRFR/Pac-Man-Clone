@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/game assets/sprites/Ghosts/DeadGhost1-facing-front.png" type="Texture" id=2]
 [ext_resource path="res://assets/game assets/sprites/Ghosts/DeadGhost2-facing-front.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 8.00044
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.93848
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -24,7 +24,7 @@ animations = [ {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.0625, 0.125 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Line2D" type="Line2D" parent="."]
 width = 5.0
@@ -32,5 +32,5 @@ width = 5.0
 [node name="BlueAnimSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.333743, -0.0615634 )
 scale = Vector2( 0.0980144, 0.0962426 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "power-up"
