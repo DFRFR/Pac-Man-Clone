@@ -15,6 +15,7 @@ onready var line2d = $Line2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$OrangeAnimSprite.play("default")
 	yield(get_tree(), "idle_frame")
 	var tree = get_tree()
 	if tree.has_group("LevelNavigation"):
@@ -53,3 +54,8 @@ func create_path():
 		
 func move():
 	velocity = move_and_slide(velocity)
+
+func power_up_anim():
+	$OrangeAnimSprite.play('power-up')
+func default_anim():
+	$OrangeAnimSprite.play('default')

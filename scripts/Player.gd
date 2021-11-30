@@ -48,7 +48,7 @@ func _process(delta):
 	var collision = move_and_collide(velocity*delta)
 	if collision:
 		var collided_obj = collision.collider.name
-		print(collided_obj)
+		
 		if("Ghost" in collided_obj):
 			print("I collided with a ghost")
 			get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
@@ -57,8 +57,8 @@ func _process(delta):
 	
 	var tile_eaten = tilemap.eat(player.position)		
 	
-	if (tile_eaten == 6):
-		print()
+
+		
 	
 	
 #	pass

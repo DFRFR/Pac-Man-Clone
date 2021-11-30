@@ -15,12 +15,14 @@ onready var line2d = $Line2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$RedAnimSprite.play("default")
 	yield(get_tree(), "idle_frame")
 	var tree = get_tree()
 	if tree.has_group("LevelNavigation"):
 		levelNavigation = tree.get_nodes_in_group("LevelNavigation")[0]
 	if tree.has_group("Player"):
 		player = tree.get_nodes_in_group("Player")[0]
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -52,3 +54,8 @@ func create_path():
 		
 func move():
 	velocity = move_and_slide(velocity)
+
+func power_up_anim():
+	$RedAnimSprite.play('power-up')
+func default_anim():
+	$RedAnimSprite.play('default')
