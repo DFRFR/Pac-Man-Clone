@@ -33,7 +33,6 @@ func _on_Timer_timeout():
 	print('Timer done')
 	 
 func power_active():
-	pass
 
 	if(blue_ghost != null):
 		print(blue_ghost)
@@ -51,7 +50,6 @@ func power_active():
 	power_active = false
 	print('Timer done')
 	 
-func power_active():
 	return power_active
 
 	
