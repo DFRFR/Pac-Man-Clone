@@ -1,7 +1,5 @@
 extends TileMap
 
-
-
 onready var player = get_parent().get_node("Player")
 
 onready var blue_ghost = get_parent().get_node("BlueGhost")
@@ -10,6 +8,7 @@ onready var red_ghost = get_parent().get_node("RedGhost")
 onready var pink_ghost = get_parent().get_node("PinkGhost")
 var power_active = false
 onready var timer = get_parent().get_parent().get_node("Timer")
+onready var is_powered_up = false
 
 const tile_type = {
 	power_nav_pellet = 14,
@@ -22,9 +21,20 @@ const tile_type = {
 	
 func _ready():
 	timer.set_wait_time(10)
-	pass
+	is_powered_up = false
 
 func _on_Timer_timeout():
+
+	blue_ghost.default_anim()
+	orange_ghost.default_anim()
+	pink_ghost.default_anim()
+	red_ghost.default_anim()
+	is_powered_up = false
+	print('Timer done')
+	 
+func power_active():
+	pass
+
 	if(blue_ghost != null):
 		print(blue_ghost)
 		blue_ghost.default_anim()
@@ -43,25 +53,34 @@ func _on_Timer_timeout():
 	 
 func power_active():
 	return power_active
+
 	
 func eat(pos):
 	var current_tile = world_to_map(pos)
 	var tile = get_cellv(current_tile)
-	if(tile==tile_type.power_pellet):
+	
+	if(tile == tile_type.power_pellet):
 		print("I ate a power pellet")
+		set_cellv(current_tile, tile_type.black2)
+		$chomp.play()
+		get_parent().get_parent().get_node("UI/Score").add_score(50)
+		
 		timer.start()
 		
 		blue_ghost.power_up_anim()
 		orange_ghost.power_up_anim()
 		pink_ghost.power_up_anim()
 		red_ghost.power_up_anim()
+
+		is_powered_up = true
+
 		power_active = true
+
 		
-	if(tile == tile_type.pellet or tile == tile_type.power_pellet):
-		set_cellv(current_tile, tile_type.black)
-		
+	if(tile == tile_type.pellet):
+		set_cellv(current_tile, tile_type.black2)
 		$chomp.play()
-	return tile
+		get_parent().get_parent().get_node("UI/Score").add_score(10)
 
 func _process(delta):
 	var count = 0

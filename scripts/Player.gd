@@ -50,8 +50,18 @@ func _process(delta):
 	
 	var collision = move_and_collide(velocity*delta)
 	if collision:
-		var collided_obj = collision.collider.name
+		var collided_obj_name = collision.collider.name
+		var collided_obj = collision.collider
 		
+
+		if("Ghost" in collided_obj_name):
+			print("I collided with a ghost")
+			if(tilemap.is_powered_up):
+				collided_obj.go_home(collided_obj)
+			else:
+				get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
+				set_process(false)
+
 		if("Ghost" in collided_obj and tilemap.power_active()==false):
 			print("I collided with a ghost")
 			get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
@@ -60,11 +70,7 @@ func _process(delta):
 		elif("Ghost" in collided_obj and tilemap.power_active()==true):
 			print("Eat ghost")
 			
+
 	
 	var tile_eaten = tilemap.eat(player.position)		
 	
-
-		
-	
-	
-#	pass
