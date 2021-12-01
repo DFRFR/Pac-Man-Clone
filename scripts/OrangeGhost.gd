@@ -7,11 +7,13 @@ extends KinematicBody2D
 export var speed = 30
 onready var tilemap = get_parent().get_node("TileMap")
 var velocity = Vector2(0, 0)
-
+onready var orange_spawn = get_parent().get_node("OrangeSpawn")
 var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
 onready var line2d = $Line2D
+var is_home = false
+onready var orange_timer = orange_spawn.get_node("OrangeTimer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +24,8 @@ func _ready():
 		levelNavigation = tree.get_nodes_in_group("LevelNavigation")[0]
 	if tree.has_group("Player"):
 		player = tree.get_nodes_in_group("Player")[0]
+
+	orange_timer.set_wait_time(10)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,7 +43,7 @@ func _process(delta):
 		#print("Enemy collided with:"+str(collide.collider_id))
 
 func navigate():
-	if path.size() > 0:
+	if path.size() > 0 and !is_home:
 		velocity = position.direction_to(path[1]) * speed
 		#print(player.hv)
 		
@@ -59,3 +63,12 @@ func power_up_anim():
 	$OrangeAnimSprite.play('power-up')
 func default_anim():
 	$OrangeAnimSprite.play('default')
+	
+func go_home(body):
+	body.position = orange_spawn.position
+	is_home = true
+	orange_timer.start()
+	body.velocity = Vector2(0, 0)
+
+func _on_OrangeTimer_timeout():
+	is_home = false
