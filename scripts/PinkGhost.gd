@@ -12,8 +12,12 @@ var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
 onready var line2d = $Line2D
+
 var is_home = false
 onready var pink_timer = pink_spawn.get_node("PinkTimer")
+
+onready var pink_ghost = get_parent().get_node('PinkGhost')
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -57,7 +61,14 @@ func create_path():
 		
 func move():
 	velocity = move_and_slide(velocity)
-	
+	if pink_ghost.position.x >445:
+		pink_ghost.position.x = 10
+		pink_ghost.position.y = 277
+		
+	if pink_ghost.position.x<5:
+		pink_ghost.position.x = 441
+		pink_ghost.position.y = 277
+		
 func power_up_anim():
 	$PinkAnimSprite.play('power-up')
 func default_anim():

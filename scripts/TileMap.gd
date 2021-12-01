@@ -6,7 +6,7 @@ onready var blue_ghost = get_parent().get_node("BlueGhost")
 onready var orange_ghost = get_parent().get_node("OrangeGhost")
 onready var red_ghost = get_parent().get_node("RedGhost")
 onready var pink_ghost = get_parent().get_node("PinkGhost")
-
+var power_active = false
 onready var timer = get_parent().get_parent().get_node("Timer")
 onready var is_powered_up = false
 
@@ -24,6 +24,7 @@ func _ready():
 	is_powered_up = false
 
 func _on_Timer_timeout():
+
 	blue_ghost.default_anim()
 	orange_ghost.default_anim()
 	pink_ghost.default_anim()
@@ -33,6 +34,26 @@ func _on_Timer_timeout():
 	 
 func power_active():
 	pass
+
+	if(blue_ghost != null):
+		print(blue_ghost)
+		blue_ghost.default_anim()
+
+	elif(orange_ghost != null):
+		orange_ghost.default_anim()
+		
+	elif(pink_ghost != null):
+		pink_ghost.default_anim()
+	
+	elif(red_ghost != null):
+		red_ghost.default_anim()
+
+	power_active = false
+	print('Timer done')
+	 
+func power_active():
+	return power_active
+
 	
 func eat(pos):
 	var current_tile = world_to_map(pos)
@@ -45,11 +66,16 @@ func eat(pos):
 		get_parent().get_parent().get_node("UI/Score").add_score(50)
 		
 		timer.start()
+		
 		blue_ghost.power_up_anim()
 		orange_ghost.power_up_anim()
 		pink_ghost.power_up_anim()
 		red_ghost.power_up_anim()
+
 		is_powered_up = true
+
+		power_active = true
+
 		
 	if(tile == tile_type.pellet):
 		set_cellv(current_tile, tile_type.black2)
