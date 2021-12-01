@@ -89,10 +89,13 @@ func default_anim():
 	
 func go_home(body):
 	#body.position = blue_spawn.position
+	blue_ghost.set_collision_layer_bit(0, 0)
+	$BlueAnimSprite.play('death')
 	is_home = true
 	blue_timer.start()
 	#body.velocity = Vector2(0, 0)
 
 func _on_BlueTimer_timeout():
+	blue_ghost.set_collision_layer_bit(0, 1)
 	is_home = false
 	blue_timer.set_wait_time(10)

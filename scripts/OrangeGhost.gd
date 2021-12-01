@@ -47,7 +47,7 @@ func _process(delta):
 	if collide:
 		pass
 		#print("Enemy collided with:"+str(collide.collider_id))
-
+	
 func navigate():
 	if path.size() > 0 and !is_home:
 		velocity = position.direction_to(path[1]) * speed
@@ -55,7 +55,7 @@ func navigate():
 		
 		if global_position == path[0]:
 			path.pop_front()
-	else:
+	elif is_home:
 		path = levelNavigation.get_simple_path(position, orange_spawn.position, false)
 		velocity = position.direction_to(path[1]) * (speed * 5)
 		if global_position == path[0]:
@@ -86,10 +86,13 @@ func default_anim():
 	
 func go_home(body):
 	#body.position = orange_spawn.position
+	orange_ghost.set_collision_layer_bit(0, 0)
+	$OrangeAnimSprite.play('death')
 	is_home = true
 	orange_timer.start()
 	#body.velocity = Vector2(0, 0)
 
 func _on_OrangeTimer_timeout():
+	orange_ghost.set_collision_layer_bit(0, 1)
 	is_home = false
 	orange_timer.set_wait_time(10)

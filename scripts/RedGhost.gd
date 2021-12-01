@@ -81,10 +81,12 @@ func default_anim():
 	
 func go_home(body):
 	#body.position = red_spawn.position
+	red_ghost.set_collision_layer_bit(0, 0)
 	$RedAnimSprite.play('death')
 	is_home = true
 	red_timer.start()
 	#body.velocity = Vector2(0, 0)
 
 func _on_RedTimer_timeout():
+	red_ghost.set_collision_layer_bit(0, 1)
 	is_home = false

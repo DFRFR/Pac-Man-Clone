@@ -85,10 +85,13 @@ func default_anim():
 	
 func go_home(body):
 	#body.position = pink_spawn.position
+	pink_ghost.set_collision_layer_bit(0, 0)
+	$PinkAnimSprite.play('death')
 	is_home = true
 	pink_timer.start()
 	#body.velocity = Vector2(0, 0)
 
 func _on_PinkTimer_timeout():
+	pink_ghost.set_collision_layer_bit(0, 1)
 	is_home = false
 	pink_timer.set_wait_time(10)
