@@ -59,16 +59,17 @@ func _process(delta):
 			if(tilemap.is_powered_up):
 				collided_obj.go_home(collided_obj)
 			else:
+				print("reload")
 				get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
 				set_process(false)
-
-		if("Ghost" in collided_obj and tilemap.power_active()==false):
-			print("I collided with a ghost")
-			get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
-			set_process(false)	
+	
+		#if("Ghost" in collided_obj and tilemap.power_active()==false):
+		#	print("I collided with a ghost")
+		#	get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
+		#	set_process(false)	
 			
-		elif("Ghost" in collided_obj and tilemap.power_active()==true):
-			print("Eat ghost")
+		#elif("Ghost" in collided_obj and tilemap.power_active()==true):
+		#	print("Eat ghost")
 			
 
 	

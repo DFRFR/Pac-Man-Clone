@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/environments/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/game assets/sprites/environments/ref_pacman.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/game assets/RedGhost.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scripts/RedGhost.gd" type="Script" id=16]
 [ext_resource path="res://scripts/PinkGhost.gd" type="Script" id=17]
+[ext_resource path="res://assets/game assets/sprites/Pellets/black.png" type="Texture" id=18]
 
 [node name="Sample Level 1" type="Node2D"]
 
@@ -57,12 +58,12 @@ collision_mask = 0
 script = ExtResource( 6 )
 
 [node name="RedGhost" parent="LevelNavigation" instance=ExtResource( 15 )]
-position = Vector2( 224.422, 231.108 )
+position = Vector2( 208, 296 )
 collision_mask = 0
 script = ExtResource( 16 )
 
 [node name="PinkGhost" parent="LevelNavigation" instance=ExtResource( 14 )]
-position = Vector2( 223.049, 296 )
+position = Vector2( 240, 296 )
 collision_mask = 0
 script = ExtResource( 17 )
 
@@ -96,6 +97,8 @@ position = Vector2( 264, 296 )
 
 [node name="OrangeTimer" type="Timer" parent="LevelNavigation/OrangeSpawn"]
 
+[node name="PathTimer" type="Timer" parent="LevelNavigation"]
+
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -116,11 +119,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Background" type="Sprite" parent="UI"]
+position = Vector2( 224, 304 )
+scale = Vector2( 28, 37.75 )
+z_index = -1
+texture = ExtResource( 18 )
 
+[node name="Timer" type="Timer" parent="."]
 [connection signal="timeout" from="LevelNavigation/BlueSpawn/BlueTimer" to="LevelNavigation/BlueGhost" method="_on_BlueTimer_timeout"]
 [connection signal="timeout" from="LevelNavigation/RedSpawn/RedTimer" to="LevelNavigation/RedGhost" method="_on_RedTimer_timeout"]
 [connection signal="timeout" from="LevelNavigation/PinkSpawn/PinkTimer" to="LevelNavigation/PinkGhost" method="_on_PinkTimer_timeout"]
 [connection signal="timeout" from="LevelNavigation/OrangeSpawn/OrangeTimer" to="LevelNavigation/OrangeGhost" method="_on_OrangeTimer_timeout"]
-
+[connection signal="timeout" from="LevelNavigation/PathTimer" to="LevelNavigation/TileMap" method="_on_PathTimer_timeout"]
 [connection signal="timeout" from="Timer" to="LevelNavigation/TileMap" method="_on_Timer_timeout"]

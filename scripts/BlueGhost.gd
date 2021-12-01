@@ -31,6 +31,8 @@ func _ready():
 		player = tree.get_nodes_in_group("Player")[0]
 	
 	blue_timer.set_wait_time(10)
+	blue_timer.start()
+	is_home = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -86,3 +88,4 @@ func go_home(body):
 
 func _on_BlueTimer_timeout():
 	is_home = false
+	blue_timer.set_wait_time(10)

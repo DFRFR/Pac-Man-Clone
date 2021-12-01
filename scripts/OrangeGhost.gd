@@ -29,7 +29,9 @@ func _ready():
 	if tree.has_group("Player"):
 		player = tree.get_nodes_in_group("Player")[0]
 
-	orange_timer.set_wait_time(10)
+	orange_timer.set_wait_time(20)
+	orange_timer.start()
+	is_home = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -83,3 +85,4 @@ func go_home(body):
 
 func _on_OrangeTimer_timeout():
 	is_home = false
+	orange_timer.set_wait_time(10)

@@ -12,7 +12,6 @@ var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
 onready var line2d = $Line2D
-
 var is_home = false
 onready var red_timer = red_spawn.get_node("RedTimer")
 
@@ -28,7 +27,7 @@ func _ready():
 		levelNavigation = tree.get_nodes_in_group("LevelNavigation")[0]
 	if tree.has_group("Player"):
 		player = tree.get_nodes_in_group("Player")[0]
-
+	
 	red_timer.set_wait_time(10)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,7 +48,6 @@ func _process(delta):
 func navigate():
 	if path.size() > 0 and !is_home:
 		velocity = position.direction_to(path[1]) * speed
-		
 		if global_position == path[0]:
 			path.pop_front()
 	

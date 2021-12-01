@@ -9,6 +9,7 @@ onready var pink_ghost = get_parent().get_node("PinkGhost")
 var power_active = false
 onready var timer = get_parent().get_parent().get_node("Timer")
 onready var is_powered_up = false
+onready var path_timer = get_parent().get_node("PathTimer")
 
 const tile_type = {
 	power_nav_pellet = 14,
@@ -20,6 +21,8 @@ const tile_type = {
 	power_pellet = 6}
 	
 func _ready():
+	path_timer.set_wait_time(4)
+	path_timer.start()
 	timer.set_wait_time(10)
 	is_powered_up = false
 
@@ -101,5 +104,5 @@ func _process(delta):
 	#else:
 		#print(count)
 
-
-
+func _on_PathTimer_timeout():
+	path_timer.start()
