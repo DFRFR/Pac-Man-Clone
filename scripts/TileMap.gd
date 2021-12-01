@@ -8,7 +8,7 @@ onready var blue_ghost = get_parent().get_node("BlueGhost")
 onready var orange_ghost = get_parent().get_node("OrangeGhost")
 onready var red_ghost = get_parent().get_node("RedGhost")
 onready var pink_ghost = get_parent().get_node("PinkGhost")
-
+var power_active = false
 onready var timer = get_parent().get_parent().get_node("Timer")
 
 const tile_type = {
@@ -25,24 +25,37 @@ func _ready():
 	pass
 
 func _on_Timer_timeout():
-	blue_ghost.default_anim()
-	orange_ghost.default_anim()
-	pink_ghost.default_anim()
-	red_ghost.default_anim()
+	if(blue_ghost != null):
+		print(blue_ghost)
+		blue_ghost.default_anim()
+
+	elif(orange_ghost != null):
+		orange_ghost.default_anim()
+		
+	elif(pink_ghost != null):
+		pink_ghost.default_anim()
+	
+	elif(red_ghost != null):
+		red_ghost.default_anim()
+
+	power_active = false
 	print('Timer done')
 	 
 func power_active():
-	pass
+	return power_active
+	
 func eat(pos):
 	var current_tile = world_to_map(pos)
 	var tile = get_cellv(current_tile)
 	if(tile==tile_type.power_pellet):
 		print("I ate a power pellet")
 		timer.start()
+		
 		blue_ghost.power_up_anim()
 		orange_ghost.power_up_anim()
 		pink_ghost.power_up_anim()
 		red_ghost.power_up_anim()
+		power_active = true
 		
 	if(tile == tile_type.pellet or tile == tile_type.power_pellet):
 		set_cellv(current_tile, tile_type.black)

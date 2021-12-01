@@ -12,7 +12,8 @@ var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
 onready var line2d = $Line2D
-
+var dead = false
+onready var blue_ghost = get_parent().get_node('BlueGhost')
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$BlueAnimSprite.play("default")
@@ -27,6 +28,7 @@ func _ready():
 func _process(delta):
 	line2d.global_position = Vector2.ZERO
 	if player and levelNavigation:
+		## warp 
 		create_path()
 		navigate()
 	move()
@@ -53,7 +55,16 @@ func create_path():
 		
 func move():
 	velocity = move_and_slide(velocity)
+	if blue_ghost.position.x >445:
+		blue_ghost.position.x = 10
+		blue_ghost.position.y = 277
+		
+	if blue_ghost.position.x<5:
+		blue_ghost.position.x = 441
+		blue_ghost.position.y = 277
 	
+func dead_anim():
+	$BlueAnimSprite.play('Death')
 func power_up_anim():
 	$BlueAnimSprite.play('power-up')
 func default_anim():

@@ -10,7 +10,10 @@ var velocity = Vector2(0,0)
 var hv = Vector2(0,0)
 onready var tilemap =  get_parent().get_node("TileMap")
 onready var player = get_parent().get_node("Player")
-onready var blueGhost = get_parent().get_node("BlueGhost")
+onready var blue_ghost = get_parent().get_node("BlueGhost")
+onready var orange_ghost = get_parent().get_node("OrangeGhost")
+onready var red_ghost = get_parent().get_node('RedGhost')
+onready var pink_ghost = get_parent().get_node('PinkGhost')
 
 func _ready():
 	$AnimatedSprite.play("movement")
@@ -49,10 +52,13 @@ func _process(delta):
 	if collision:
 		var collided_obj = collision.collider.name
 		
-		if("Ghost" in collided_obj):
+		if("Ghost" in collided_obj and tilemap.power_active()==false):
 			print("I collided with a ghost")
 			get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
-			set_process(false)
+			set_process(false)	
+			
+		elif("Ghost" in collided_obj and tilemap.power_active()==true):
+			print("Eat ghost")
 			
 	
 	var tile_eaten = tilemap.eat(player.position)		

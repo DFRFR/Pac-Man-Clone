@@ -12,6 +12,7 @@ var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
 onready var line2d = $Line2D
+onready var orange_ghost = get_parent().get_node('OrangeGhost')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,6 +55,13 @@ func create_path():
 		
 func move():
 	velocity = move_and_slide(velocity)
+	if orange_ghost.position.x >445:
+		orange_ghost.position.x = 10
+		orange_ghost.position.y = 277
+		
+	if orange_ghost.position.x<5:
+		orange_ghost.position.x = 441
+		orange_ghost.position.y = 277
 
 func power_up_anim():
 	$OrangeAnimSprite.play('power-up')

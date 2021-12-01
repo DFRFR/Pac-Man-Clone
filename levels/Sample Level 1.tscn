@@ -62,12 +62,12 @@ collision_mask = 0
 script = ExtResource( 7 )
 
 [node name="RedGhost" parent="LevelNavigation" instance=ExtResource( 15 )]
-position = Vector2( 208, 296 )
+position = Vector2( 224.422, 231.108 )
 collision_mask = 0
 script = ExtResource( 16 )
 
 [node name="PinkGhost" parent="LevelNavigation" instance=ExtResource( 14 )]
-position = Vector2( 240, 296 )
+position = Vector2( 223.049, 296 )
 collision_mask = 0
 script = ExtResource( 17 )
 
@@ -96,4 +96,5 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Timer" to="LevelNavigation/TileMap" method="_on_Timer_timeout"]

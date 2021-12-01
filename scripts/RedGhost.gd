@@ -12,7 +12,7 @@ var path: Array = []
 var levelNavigation: Navigation2D = null
 var player = null
 onready var line2d = $Line2D
-
+onready var red_ghost = get_parent().get_node('RedGhost')
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$RedAnimSprite.play("default")
@@ -54,7 +54,14 @@ func create_path():
 		
 func move():
 	velocity = move_and_slide(velocity)
-
+	if red_ghost.position.x >445:
+		red_ghost.position.x = 10
+		red_ghost.position.y = 277
+		
+	if red_ghost.position.x<5:
+		red_ghost.position.x = 441
+		red_ghost.position.y = 277
+		
 func power_up_anim():
 	$RedAnimSprite.play('power-up')
 func default_anim():
