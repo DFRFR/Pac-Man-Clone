@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/game assets/sprites/Player/pacman-right-open-mouth.png" type="Texture" id=1]
 [ext_resource path="res://assets/game assets/sprites/Player/pacman-right-closed-mouth.png" type="Texture" id=2]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://music/pacman_death.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.99738
@@ -26,3 +27,6 @@ shape = SubResource( 1 )
 position = Vector2( -3.57628e-07, -8.9407e-08 )
 scale = Vector2( 0.103896, 0.0909091 )
 frames = SubResource( 2 )
+
+[node name="DeathNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

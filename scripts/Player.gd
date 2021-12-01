@@ -59,6 +59,7 @@ func _process(delta):
 			if(tilemap.is_powered_up):
 				collided_obj.go_home(collided_obj)
 			else:
+				$DeathNoise.play()
 				print("reload")
 				get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
 				set_process(false)

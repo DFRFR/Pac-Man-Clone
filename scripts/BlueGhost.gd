@@ -56,6 +56,13 @@ func navigate():
 		
 		if global_position == path[0]:
 			path.pop_front()
+	else:
+		path = levelNavigation.get_simple_path(position, blue_spawn.position, false)
+		velocity = position.direction_to(path[1]) * (speed * 5)
+		if global_position == path[0]:
+			path.pop_front()
+		if position == blue_spawn.position:
+			velocity = Vector2(0, 0)
 	
 func create_path():
 	if levelNavigation != null and player != null:
@@ -81,10 +88,10 @@ func default_anim():
 	$BlueAnimSprite.play('default')
 	
 func go_home(body):
-	body.position = blue_spawn.position
+	#body.position = blue_spawn.position
 	is_home = true
 	blue_timer.start()
-	body.velocity = Vector2(0, 0)
+	#body.velocity = Vector2(0, 0)
 
 func _on_BlueTimer_timeout():
 	is_home = false

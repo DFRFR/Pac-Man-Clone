@@ -33,6 +33,7 @@ position = Vector2( 0.0625, 0.125 )
 shape = SubResource( 1 )
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 width = 5.0
 
 [node name="BlueAnimSprite" type="AnimatedSprite" parent="."]

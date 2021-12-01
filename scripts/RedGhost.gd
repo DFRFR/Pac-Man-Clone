@@ -50,6 +50,13 @@ func navigate():
 		velocity = position.direction_to(path[1]) * speed
 		if global_position == path[0]:
 			path.pop_front()
+	else:
+		path = levelNavigation.get_simple_path(position, red_spawn.position, false)
+		velocity = position.direction_to(path[1]) * (speed * 5)
+		if global_position == path[0]:
+			path.pop_front()
+		if position == red_spawn.position:
+			velocity = Vector2(0, 0)
 	
 func create_path():
 	if levelNavigation != null and player != null:
@@ -73,10 +80,11 @@ func default_anim():
 	$RedAnimSprite.play('default')
 	
 func go_home(body):
-	body.position = red_spawn.position
+	#body.position = red_spawn.position
+	$RedAnimSprite.play('death')
 	is_home = true
 	red_timer.start()
-	body.velocity = Vector2(0, 0)
+	#body.velocity = Vector2(0, 0)
 
 func _on_RedTimer_timeout():
 	is_home = false

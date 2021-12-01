@@ -54,6 +54,13 @@ func navigate():
 		
 		if global_position == path[0]:
 			path.pop_front()
+	else:
+		path = levelNavigation.get_simple_path(position, pink_spawn.position, false)
+		velocity = position.direction_to(path[1]) * (speed * 5)
+		if global_position == path[0]:
+			path.pop_front()
+		if position == pink_spawn.position:
+			velocity = Vector2(0, 0)
 	
 func create_path():
 	if levelNavigation != null and player != null:
@@ -77,10 +84,10 @@ func default_anim():
 	$PinkAnimSprite.play('default')
 	
 func go_home(body):
-	body.position = pink_spawn.position
+	#body.position = pink_spawn.position
 	is_home = true
 	pink_timer.start()
-	body.velocity = Vector2(0, 0)
+	#body.velocity = Vector2(0, 0)
 
 func _on_PinkTimer_timeout():
 	is_home = false

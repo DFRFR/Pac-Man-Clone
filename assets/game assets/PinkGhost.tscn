@@ -33,6 +33,7 @@ position = Vector2( 0.0907803, 0.028677 )
 shape = SubResource( 1 )
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 width = 5.0
 default_color = Color( 1, 0, 0.4, 1 )
 
