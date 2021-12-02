@@ -30,3 +30,5 @@ frames = SubResource( 2 )
 
 [node name="DeathNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Spawner" type="Position2D" parent="."]

@@ -93,6 +93,7 @@ func go_home(body):
 	#body.velocity = Vector2(0, 0)
 
 func _on_OrangeTimer_timeout():
+	default_anim()
 	orange_ghost.set_collision_layer_bit(0, 1)
 	is_home = false
 	orange_timer.set_wait_time(10)

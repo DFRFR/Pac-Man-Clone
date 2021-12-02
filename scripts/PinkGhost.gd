@@ -92,6 +92,7 @@ func go_home(body):
 	#body.velocity = Vector2(0, 0)
 
 func _on_PinkTimer_timeout():
+	default_anim()
 	pink_ghost.set_collision_layer_bit(0, 1)
 	is_home = false
 	pink_timer.set_wait_time(10)

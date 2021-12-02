@@ -96,6 +96,7 @@ func go_home(body):
 	#body.velocity = Vector2(0, 0)
 
 func _on_BlueTimer_timeout():
+	default_anim()
 	blue_ghost.set_collision_layer_bit(0, 1)
 	is_home = false
 	blue_timer.set_wait_time(10)

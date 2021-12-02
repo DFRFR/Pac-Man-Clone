@@ -10,6 +10,7 @@ var power_active = false
 onready var timer = get_parent().get_parent().get_node("Timer")
 onready var is_powered_up = false
 onready var path_timer = get_parent().get_node("PathTimer")
+onready var pellets = get_parent().get_parent().get_node("UI/Pellets")
 
 const tile_type = {
 	power_nav_pellet = 14,
@@ -64,7 +65,7 @@ func eat(pos):
 		print("I ate a power pellet")
 		set_cellv(current_tile, tile_type.black2)
 		$chomp.play()
-		get_parent().get_parent().get_node("UI/Pellets").add_pellets(50)
+		get_parent().get_parent().get_node("UI/Pellets").add_pellets(5)
 		
 		timer.start()
 		
@@ -74,14 +75,15 @@ func eat(pos):
 		red_ghost.power_up_anim()
 
 		is_powered_up = true
-
 		power_active = true
-
+		
+		player.speed = player.max_speed - pellets.pellets
 		
 	if(tile == tile_type.pellet):
 		set_cellv(current_tile, tile_type.black2)
 		$chomp.play()
-		get_parent().get_parent().get_node("UI/Pellets").add_pellets(10)
+		get_parent().get_parent().get_node("UI/Pellets").add_pellets(1)
+		player.speed = player.max_speed - pellets.pellets
 
 func _process(delta):
 	var count = 0
@@ -103,6 +105,8 @@ func _process(delta):
 		set_process(false)
 	#else:
 		#print(count)
-
+	
+	print(player.speed)
+	
 func _on_PathTimer_timeout():
 	path_timer.start()

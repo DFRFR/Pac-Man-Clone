@@ -88,5 +88,6 @@ func go_home(body):
 	#body.velocity = Vector2(0, 0)
 
 func _on_RedTimer_timeout():
+	default_anim()
 	red_ghost.set_collision_layer_bit(0, 1)
 	is_home = false
