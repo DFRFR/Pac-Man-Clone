@@ -64,7 +64,7 @@ func eat(pos):
 		print("I ate a power pellet")
 		set_cellv(current_tile, tile_type.black2)
 		$chomp.play()
-		get_parent().get_parent().get_node("UI/Pellets").add_pellets(50)
+		get_parent().get_parent().get_node("UI/Score").add_score(50)
 		
 		timer.start()
 		
@@ -81,7 +81,7 @@ func eat(pos):
 	if(tile == tile_type.pellet):
 		set_cellv(current_tile, tile_type.black2)
 		$chomp.play()
-		get_parent().get_parent().get_node("UI/Pellets").add_pellets(10)
+		get_parent().get_parent().get_node("UI/Score").add_score(10)
 
 func _process(delta):
 	var count = 0
