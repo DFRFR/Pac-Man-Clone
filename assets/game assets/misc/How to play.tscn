@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/game assets/misc/Extrude.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/game assets/misc/How to play.gd" type="Script" id=2]
+
+[node name="How to play" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.985
+margin_left = 1.49829
+margin_top = 2.99664
+margin_right = 1.49829
+margin_bottom = 8.99658
+color = Color( 0, 0.0588235, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.327
+anchor_top = 0.602
+anchor_right = 0.722
+anchor_bottom = 0.678
+margin_left = -0.12001
+margin_top = -0.16803
+margin_right = -0.119843
+margin_bottom = 0.231995
+custom_fonts/font = ExtResource( 1 )
+button_mask = 2
+text = "Return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 51.335
+margin_top = 16.742
+margin_right = -14.665
+margin_bottom = -242.258
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_right = 334.0
+margin_bottom = 341.0
+custom_fonts/font = ExtResource( 1 )
+text = "How To Play
+
+1. USE WASD FOR 
+MOVEMENT
+
+2. IF PLAYING V2 
+use the Space
+bar to shoot"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -28,38 +28,38 @@ margin_right = 467.0
 margin_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 123.0
+margin_left = 71.0
 margin_top = 202.0
-margin_right = 343.0
+margin_right = 396.0
 margin_bottom = 398.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 220.0
+margin_right = 325.0
 margin_bottom = 40.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 220.0
+margin_left = 52.0
+margin_right = 272.0
 margin_bottom = 40.0
 custom_fonts/font = ExtResource( 1 )
 text = "Pac-Man V2"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 44.0
-margin_right = 220.0
+margin_right = 325.0
 margin_bottom = 196.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 1.0
-margin_right = 218.0
+margin_right = 325.0
 margin_bottom = 152.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_right = 217.0
+margin_right = 325.0
 margin_bottom = 48.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
-margin_left = 27.0
-margin_right = 190.0
+margin_left = 81.0
+margin_right = 244.0
 margin_bottom = 48.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -79,11 +79,11 @@ text = "Start"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 52.0
-margin_right = 217.0
+margin_right = 325.0
 margin_bottom = 100.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
-margin_right = 217.0
+margin_right = 325.0
 margin_bottom = 48.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
@@ -93,22 +93,22 @@ custom_fonts/font = SubResource( 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = ">"
 
-[node name="Options" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+[node name="How to play" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_left = 25.0
-margin_right = 217.0
+margin_right = 325.0
 margin_bottom = 48.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-text = "Options"
+text = "How to play"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 104.0
-margin_right = 217.0
+margin_right = 325.0
 margin_bottom = 152.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
-margin_left = 46.0
-margin_right = 170.0
+margin_left = 100.0
+margin_right = 224.0
 margin_bottom = 48.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]

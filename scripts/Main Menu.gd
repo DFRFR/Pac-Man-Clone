@@ -2,6 +2,7 @@ extends MarginContainer
 
 
 const sample_scene = preload("res://levels/Game Selector.tscn")
+const how_to_play = preload("res://assets/game assets/misc/How to play.tscn")
 onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Selector
 onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
 onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector
@@ -30,7 +31,7 @@ func handle_selection(_current_selection):
 		get_parent().add_child(sample_scene.instance())
 		queue_free()
 	elif _current_selection == 1:
-		print("Add options!")
+		get_parent().add_child(how_to_play.instance())
 	elif _current_selection == 2:
 		get_tree().quit()
 		

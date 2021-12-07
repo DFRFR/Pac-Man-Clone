@@ -21,6 +21,7 @@ const tile_type = {
 	power_pellet = 6}
 	
 func _ready():
+	print_tree_pretty()
 	path_timer.set_wait_time(4)
 	path_timer.start()
 	timer.set_wait_time(10)
