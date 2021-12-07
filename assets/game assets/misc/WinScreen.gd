@@ -6,7 +6,7 @@ func _ready():
 
 
 func _on_RestartButton_pressed():
-	get_tree().change_scene("res://levels/Sample Level 1.tscn")
+	get_tree().reload("res://levels/Sample Level 1.tscn")
 
 
 func _on_MainMenuButton_pressed():
