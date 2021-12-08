@@ -21,7 +21,8 @@ const tile_type = {
 	power_pellet = 6}
 	
 func _ready():
-	print_tree_pretty()
+	if $music.playing == false:
+		$music.play()
 	path_timer.set_wait_time(4)
 	path_timer.start()
 	timer.set_wait_time(10)
@@ -85,6 +86,8 @@ func eat(pos):
 		get_parent().get_parent().get_node("UI/Score").add_score(10)
 
 func _process(delta):
+	
+		
 	var count = 0
 	
 	for i in range(get_used_rect().size.x):
@@ -99,8 +102,9 @@ func _process(delta):
 	
 	if(count == 0):
 		#print("won")
+		$music.stop()
 		$win.play()
-		get_tree().change_scene("res://assets/game assets/misc/WinScreen.tscn")
+		get_tree().change_scene("res://assets/game assets/misc/WinWinScreen.tscn")
 		set_process(false)
 	#else:
 		#print(count)

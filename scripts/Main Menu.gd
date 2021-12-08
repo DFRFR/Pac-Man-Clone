@@ -12,6 +12,8 @@ var current_selection = 0
 
 func _ready():
 	set_current_selection(0)
+	if $main_music_theme.playing == false:
+		$main_music_theme.play()
 	
 	
 func _process(delta):

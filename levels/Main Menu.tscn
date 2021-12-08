@@ -126,7 +126,6 @@ custom_fonts/font = SubResource( 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Exit"
 
-[node name="musicScreen" type="AudioStreamPlayer" parent="."]
+[node name="main_music_theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -20.0
-autoplay = true

@@ -14,13 +14,15 @@ onready var blue_ghost = get_parent().get_node("BlueGhost")
 onready var orange_ghost = get_parent().get_node("OrangeGhost")
 onready var red_ghost = get_parent().get_node('RedGhost')
 onready var pink_ghost = get_parent().get_node('PinkGhost')
-
+onready var music_norm = tilemap.get_node('music') 
 func _ready():
 	$AnimatedSprite.play("movement")
+	
 	 # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	hv = velocity/2
 	if Input.is_action_pressed("ui_up"):
 		velocity = Vector2(0,-speed)
@@ -59,6 +61,8 @@ func _process(delta):
 			if(tilemap.is_powered_up):
 				collided_obj.go_home(collided_obj)
 			else:
+				if music_norm.playing == true:
+					music_norm.stop()
 				$DeathNoise.play()
 				print("reload")
 				get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")

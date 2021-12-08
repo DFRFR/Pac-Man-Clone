@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Raining Bits.ogg-ecc3cd75e8d010a1c00456707f9ec1cb.oggstr"
+
+[deps]
+
+source_file="res://music/Raining Bits.ogg"
+dest_files=[ "res://.import/Raining Bits.ogg-ecc3cd75e8d010a1c00456707f9ec1cb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

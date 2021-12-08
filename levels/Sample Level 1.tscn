@@ -9,7 +9,7 @@
 [ext_resource path="res://scripts/OrangeGhost.gd" type="Script" id=7]
 [ext_resource path="res://music/pac_chomp1.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/game assets/BlueGhost.tscn" type="PackedScene" id=9]
-[ext_resource path="res://music/09 Hurry! Water World.wav" type="AudioStream" id=10]
+[ext_resource path="res://music/Raining Bits.ogg" type="AudioStream" id=10]
 [ext_resource path="res://music/pacman_intermission.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/game assets/misc/Extrude.tres" type="DynamicFont" id=12]
 [ext_resource path="res://scripts/Score.gd" type="Script" id=13]
@@ -47,6 +47,10 @@ volume_db = -30.0
 stream = ExtResource( 11 )
 volume_db = -30.0
 
+[node name="music" type="AudioStreamPlayer" parent="LevelNavigation/TileMap"]
+stream = ExtResource( 10 )
+volume_db = -20.0
+
 [node name="Player" parent="LevelNavigation" groups=[
 "Player",
 ] instance=ExtResource( 3 )]
@@ -71,11 +75,6 @@ script = ExtResource( 17 )
 position = Vector2( 264, 296 )
 collision_mask = 0
 script = ExtResource( 7 )
-
-[node name="radar" type="AudioStreamPlayer" parent="LevelNavigation"]
-stream = ExtResource( 10 )
-volume_db = -20.0
-autoplay = true
 
 [node name="BlueSpawn" type="Position2D" parent="LevelNavigation"]
 position = Vector2( 184, 296 )
