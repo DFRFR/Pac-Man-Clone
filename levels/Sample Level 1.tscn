@@ -126,7 +126,6 @@ z_index = -1
 texture = ExtResource( 18 )
 
 [node name="Timer" type="Timer" parent="."]
-
 [connection signal="timeout" from="LevelNavigation/BlueSpawn/BlueTimer" to="LevelNavigation/BlueGhost" method="_on_BlueTimer_timeout"]
 [connection signal="timeout" from="LevelNavigation/RedSpawn/RedTimer" to="LevelNavigation/RedGhost" method="_on_RedTimer_timeout"]
 [connection signal="timeout" from="LevelNavigation/PinkSpawn/PinkTimer" to="LevelNavigation/PinkGhost" method="_on_PinkTimer_timeout"]

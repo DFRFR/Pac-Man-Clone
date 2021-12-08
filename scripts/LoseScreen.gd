@@ -1,8 +1,12 @@
 extends CanvasLayer
 
 func _ready():
-	pass
+	$GameOver.play()
 
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene("res://levels/Main Menu.tscn")
+		queue_free()
 
 func _on_RestartButton_pressed():
 	get_tree().change_scene("res://levels/Sample Level 1.tscn")
