@@ -89,8 +89,7 @@ func eat(pos):
 
 func _process(delta):
 	var count = 0
-	if $music.playing == false:
-		$music.play()
+	
 	for i in range(get_used_rect().size.x):
 		
 		for j in range(get_used_rect().size.y+10):

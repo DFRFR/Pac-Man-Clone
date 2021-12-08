@@ -18,7 +18,7 @@ onready var pink_ghost = get_parent().get_node('PinkGhost')
 onready var pellets = get_parent().get_parent().get_node("UI/Pellets")
 onready var direction = ""
 const fireball_scene = preload("res://assets/game assets/sprites/Player/Fireball.tscn")
-
+onready var music_norm = tilemap.get_node('music') 
 func _ready():
 	$AnimatedSprite.play("movement")
 	 # Replace with function body.
@@ -73,6 +73,8 @@ func _process(delta):
 			if(tilemap.is_powered_up):
 				collided_obj.go_home(collided_obj)
 			else:
+				if music_norm.playing == true:
+					music_norm.stop()
 				$DeathNoise.play()
 				print("reload")
 				get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
