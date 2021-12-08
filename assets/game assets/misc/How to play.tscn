@@ -33,7 +33,6 @@ margin_top = -0.16803
 margin_right = -0.119843
 margin_bottom = 0.231995
 custom_fonts/font = ExtResource( 1 )
-button_mask = 2
 text = "Return"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -62,5 +61,4 @@ MOVEMENT
 2. IF PLAYING V2 
 use the Space
 bar to shoot"
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

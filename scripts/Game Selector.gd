@@ -1,8 +1,8 @@
 extends MarginContainer
 
 
-const OG_PACMAN = preload("res://levels/Sample Level 1.tscn")
-const PACMAN_V2 = preload("res://levels/Sample Variant Level.tscn")
+const OG_PACMAN = "res://levels/Sample Level 1.tscn"
+const PACMAN_V2 = "res://levels/Sample Variant Level.tscn"
 
 onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Selector
 onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
@@ -27,10 +27,10 @@ func _process(delta):
 		
 func handle_selection(_current_selection):
 	if _current_selection == 0:
-		get_parent().add_child(OG_PACMAN.instance())
+		get_tree().change_scene(OG_PACMAN)
 		queue_free()
 	elif _current_selection == 1:
-		get_parent().add_child(PACMAN_V2.instance())
+		get_tree().change_scene(PACMAN_V2)
 		queue_free()
 		
 func set_current_selection(_current_selection):

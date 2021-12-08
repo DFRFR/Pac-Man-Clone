@@ -63,7 +63,6 @@ func _process(delta):
 			else:
 				if music_norm.playing == true:
 					music_norm.stop()
-				$DeathNoise.play()
 				print("reload")
 				get_tree().change_scene("res://assets/game assets/misc/LoseScreen.tscn")
 				set_process(false)
